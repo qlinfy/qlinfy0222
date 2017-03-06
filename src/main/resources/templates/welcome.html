@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<p shiro:hasRole="管理员">我是管理员</p>
+<p shiro:hasRole="会员">我是会员</p>
+<p shiro:hasPermission="用户管理">用户管理</p>
+<p shiro:hasPermission="用户理">用户理</p>
+
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+<p th:text="'Hello！, ' + ${userName} + '!'" >3333</p>
+<tr th:each="user,userStat : ${dd}">
+
+    <td th:text="${user}">${user}</td>
+</tr>
+</body>
+</html>
